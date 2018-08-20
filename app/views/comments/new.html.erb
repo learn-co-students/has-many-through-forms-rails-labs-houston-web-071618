@@ -1,0 +1,11 @@
+<%= form_for @comment do |f| %>
+  <%= f.label "Content" %>
+  <%= f.text_area :content %>
+
+  <%= f.fields_for :user do |info| %>
+    <%= info.label "Create a New User"%>
+    <%= info.text_field :username %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
