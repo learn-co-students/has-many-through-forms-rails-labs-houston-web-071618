@@ -17,7 +17,9 @@
     <ul>
         <% @post.comments.each do |c| %>
             <li>
-                <%= c.user.username %> says: <%= c.content %>
+                
+                <a href="<%= user_path(c) %>"> <%= c.user.username %> </a> says: <%= c.content %>
+
             </li>
         <% end %>
     </ul>

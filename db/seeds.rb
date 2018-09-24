@@ -48,6 +48,7 @@ stores = [
 def randomElement(arr)
     arr[Random.rand(arr.length)]
 end
+
 def randomString(arr_of_arrs)
     string = ""
     Random.rand(20).times do 
@@ -57,6 +58,7 @@ def randomString(arr_of_arrs)
     string << randomElement(["!", '.', ',', '?', ';'])
     string
 end
+
 def paragraph(arr_of_arrs)
     paragraph = ""
 

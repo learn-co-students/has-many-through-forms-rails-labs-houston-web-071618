@@ -13,7 +13,7 @@
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
     <br>
     <br>
-    <%= fields_for :categories do |cat_fields| %>
+    <%= f.fields_for :categories, @post.categories.build do |cat_fields| %>
         <%= cat_fields.label :name %>
         <%= cat_fields.text_field :name %>
     <% end %>
