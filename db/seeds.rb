@@ -70,7 +70,8 @@ end
 Category.destroy_all
 Post.destroy_all
 User.destroy_all
-
+PostCategory.destroy_all
+Comment.destroy_all
 
 5.times do 
     Category.create(:name => "#{randomElement(colorsLong)} #{randomElement(trees)}" )
@@ -79,11 +80,11 @@ end
     Post.create(:title => "#{randomElement(colorsLong)} #{randomElement(zodiac)}", :content => paragraph([trees, authorsLong, colorsLong, zodiac, stores]));
 end
 5.times do 
-    PostCategory.create(:post_id => randomElement(Post.all), :category_id => randomElement(Category.all))
+    PostCategory.create(:post_id => randomElement(Post.all).id, :category_id => randomElement(Category.all).id)
 end
 5.times do 
     User.create(:username => randomElement(authorsLong), :email => randomElement(stores))
 end
 5.times do 
-    Comment.create(:content => randomString([trees, authorsLong, colorsLong, zodiac, stores]), :user_id => randomElement(User.all), :post_id => randomElement(Post.all))
+    Comment.create(:content => randomString([trees, authorsLong, colorsLong, zodiac, stores]), :user_id => randomElement(User.all).id, :post_id => randomElement(Post.all).id)
 end

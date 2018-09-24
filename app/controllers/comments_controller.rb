@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
       cm.delete(:user_attributes)
     end
     comment = Comment.create(cm)
-    binding.pry
     redirect_to post_path(comment.post)
   end
 
